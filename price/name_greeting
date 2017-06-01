@@ -1,0 +1,22 @@
+#!/bin/sh 
+# Jay Price
+# - name_greeting: This page prints the greeting appropriate for the time of day.
+#
+#
+
+PATH=/bin:/usr/bin:/usr/local/bin:$HOME/bin:
+CURR_HOUR=`date +%H`
+
+echo "Print your name here: \c"
+read NAME
+
+if [ $CURR_HOUR -ge 0 -a $CURR_HOUR -lt 12 ]
+then
+	echo "$NAME, Good Morning."
+elif [ $CURR_HOUR -ge 12 -a $CURR_HOUR -lt 18 ]
+then
+	echo "$NAME, Good Afternoon."
+elif [ $CURR_HOUR -ge 18 -a $CURR_HOUR -lt 24]
+then
+	echo "$NAME, Good Evening."
+fi
