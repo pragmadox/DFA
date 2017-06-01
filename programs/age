@@ -1,0 +1,13 @@
+#! /bin/sh 
+# Jay Price
+# - age: Calculate and show someone's age.
+#
+#
+echo "What is your name? \c"
+read NAME
+echo "What is your date of birth (yyyy-mm-dd)? \c"
+read DOB
+export DOB
+CURRENTAGE=$(datediff $DOB now -f '%y Years, %m Months, %d Days, %H Hours, %m Minutes, %S Seconds') 
+echo "$NAME, You are currently $CURRENTAGE old." 
+
