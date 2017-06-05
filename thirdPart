@@ -14,24 +14,27 @@ while [ $LOOP -le $MAXLOOP ]
 do
 	echo "What is your name? \c"
 	read  NAME
-	TRNAME=`echo $NAME | tr -d [:cntrl:] | tr -d [:special:] | tr -d [:punct:]` 
-	if [ x$NAME = x ]
-	then
-		echo "No valid input. What is your name?"
-	else
-	if [ $NAME != $TRNAME ] 
+	TRNAME=`echo $NAME | tr -d [:cntrl:] | tr -d [:special:] | tr -d [:punct:] | tr -d [:digit:]`
+	LENGTH=`echo ${#NAME}`
+	if [ $LENGTH -gt 25 ] 
 	then
 		echo "Invalid input. What is your name?"
-	else 
-	break
+	elif [ x$NAME = x ]
+	then
+		echo "No valid input. What is your name?"
+	elif [ "$NAME" = "$TRNAME" ] 
+	then
+		break
+	else
+		echo "Invalid input. What is your name?"
+	
+	fi
 	LOOP=`expr $LOOP + 1`
         if [ $LOOP -gt $MAXLOOP ]
         then
         	echo "Too Many tries BIG FELLA!"
         	exit 1
         fi
-	fi
-	fi
 done
 
 
