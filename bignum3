@@ -1,0 +1,19 @@
+# Big Number 
+# Jajuan Burton 31 MAY 2017
+# 
+# This is a program to tell the user what number out of two inputs is larger. 
+#
+PATH=/Users/burton/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin
+
+NUMBERONE=$1
+NUMBERTWO=$2
+
+if [ $NUMBERONE -gt $NUMBERTWO ]
+   then
+       echo "$NUMBERONE is greater than $NUMBERTWO"
+
+elif [ $NUMBERTWO -gt $NUMBERONE ]
+   then
+       echo "$NUMBERTWO is greater than $NUMBERONE"
+fi
+

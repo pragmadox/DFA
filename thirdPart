@@ -1,0 +1,49 @@
+#!/bin/sh
+# Part 3 greeting
+# Jajuan Burton 31 MAY 2017
+#
+#
+#
+PATH=/Users/burton/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin
+
+LOOP=0
+MAXLOOP=5
+TODAY=`date +%H`
+
+while [ $LOOP -le $MAXLOOP ]
+do
+	echo "What is your name? \c"
+	read NAME 
+	if [ x$NAME = x ]
+	then
+		echo "What is your name?"
+	else
+	break
+	LOOP=`expr $LOOP + 1`
+        if [ $LOOP -gt $MAXLOOP ]
+        then
+        	echo "Too Many tries BIG FELLA!"
+        	exit 1
+	fi
+	fi
+done
+
+while [ $TODAY -ge 00 -a $TODAY -le 11 ]
+do
+	echo "Good Morning, $NAME."
+	break
+done
+while [ $TODAY -ge 12 -a $TODAY -le 17 ]
+do
+	echo "Good Afternoon, $NAME."
+	break
+done
+while [ $TODAY -ge 18 -a $TODAY -le 20 ]
+do
+	echo "Good Evening, $NAME."
+	break
+done
+while [ $TODAY -ge 21 -a $TODAY -le 23 ]
+do
+	echo "Good Night, $NAME."
+done

@@ -1,0 +1,23 @@
+#!/bin/sh
+# Part 3 greeting
+# Jajuan Burton 31 MAY 2017
+#
+#
+#
+PATH=/Users/burton/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin
+
+echo "Tell me the first number: \c"
+read NUMBERONE
+
+echo "Tell me your Second number: \c"
+read NUMBERTWO
+
+if [ $NUMBERONE -gt $NUMBERTWO ]
+then
+echo "$NUMBERONE is bigger than $NUMBERTWO"
+elif [ $NUMBERTWO -gt $NUMBERONE ]
+then 
+echo "$NUMBERTWO is bigger than $NUMBERONE" 
+fi
+
+

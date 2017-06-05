@@ -1,0 +1,10 @@
+#!/bin/sh
+# My First Program 
+# Jajuan Burton 31 MAY 2017
+#
+# This Program prints hello world to standard output
+
+
+PATH=/bin/echo
+
+echo "Hello World"

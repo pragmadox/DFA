@@ -1,0 +1,21 @@
+#!/bin/sh
+# Part 2 greeting
+# Jajuan Burton 31 MAY 2017
+#
+#
+#
+
+
+if [ "date '+TIME: %H:%M' -lt 2400  &&  date '+TIME: %H:%M' -gt 1800" ]
+then 
+echo "Good Evening"
+elif [ "date '+TIME: %H:%M' -gt 0001  &&  date '+TIME: %H:%M' -lt 2300" ]
+then
+echo "Good Morning"
+elif [ "date '+TIME: %H:%M' -lt 1200  &&  date '+TIME: %H:%M' -gt 1759" ]
+then
+echo "Good Afternoon"
+fi
+
+
+  

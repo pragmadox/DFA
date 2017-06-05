@@ -1,0 +1,17 @@
+Prt 3 greeting
+# Jajuan Burton 31 MAY 2017
+#
+#
+#
+PATH=/Users/burton/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin
+
+if [ $1 -gt $2 ]
+   then
+        echo "$1 is greater than $2"
+elif [ $2 - $1 ]
+   then
+       echo "$2 is greater than $1"
+fi
+
+
+

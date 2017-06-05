@@ -1,0 +1,27 @@
+#!/bin/sh
+# Part 2 greeting
+# Jajuan Burton 31 MAY 2017
+#
+# This Program gives a greeting when executed accoriding to the time of day
+#
+PATH=/Users/burton/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin
+
+
+TODAY=`date +%H`
+
+  if [ $TODAY -ge 00 -a $TODAY -le 11 ]
+then
+echo "Good Morning"
+
+elif [ $TODAY -ge 12 -a $TODAY -le 17 ]
+then
+echo "Good Afternoon"
+
+elif [ $TODAY -ge 18 -a $TODAY -le 20 ]
+then
+echo "Good Evening"
+
+elif [ $TODAY -ge 21 -a $TODAY -le 23 ]
+then
+echo "Good Night"
+fi
