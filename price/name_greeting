@@ -4,7 +4,6 @@
 #
 #
 
-PATH=/bin:/usr/bin:/usr/local/bin:$HOME/bin:
 CURR_HOUR=`date +%H`
 
 echo "Print your name here: \c"

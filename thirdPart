@@ -13,20 +13,27 @@ TODAY=`date +%H`
 while [ $LOOP -le $MAXLOOP ]
 do
 	echo "What is your name? \c"
-	read NAME 
+	read  NAME
+	TRNAME=`echo $NAME | tr -d [:cntrl:] | tr -d [:special:] | tr -d [:punct:]` 
 	if [ x$NAME = x ]
 	then
-		echo "What is your name?"
+		echo "No valid input. What is your name?"
 	else
+	if [ $NAME != $TRNAME ] 
+	then
+		echo "Invalid input. What is your name?"
+	else 
 	break
 	LOOP=`expr $LOOP + 1`
         if [ $LOOP -gt $MAXLOOP ]
         then
         	echo "Too Many tries BIG FELLA!"
         	exit 1
+        fi
 	fi
 	fi
 done
+
 
 while [ $TODAY -ge 00 -a $TODAY -le 11 ]
 do
