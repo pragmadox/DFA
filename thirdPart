@@ -32,7 +32,7 @@ do
 	LOOP=`expr $LOOP + 1`
         if [ $LOOP -gt $MAXLOOP ]
         then
-        	echo "Too Many tries BIG FELLA!"
+        	echo "Too Many tries, BIG FELLA!"
         	exit 1
         fi
 done

@@ -1,0 +1,21 @@
+#/bin/sh
+# Name: Jay Price
+# Contact: jared.x.price@gmail.com
+# Tue Jun  6 12:42:45 EDT 2017
+# phone: This program will look up entries in the phone book, based on either 
+# name, address, or number..
+# contact: jared.x.price@gmail.com
+
+PATH=/bin:/usr/bin:/usr/sbin
+export PATH
+
+LINE=`grep $@ $HOME/.phone`
+
+ENTRY=`echo $LINE | cut -d : -f1 -f2 -f3 -f4`
+NAME=`echo $ENTRY | cut -d : -f1`
+ADDRESS=`echo $ENTRY | cut -d : -f2`
+EMAIL=`echo $ENTRY | cut -d : -f3`
+PNUMBER=`echo $ENTRY | cut -d : -f4`
+echo "NAME: $NAME ADDRESS: $ADDRESS EMAIL: $EMAIL PNUMBER: $PNUMBER"
+
+
