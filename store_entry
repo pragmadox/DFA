@@ -1,0 +1,18 @@
+#/bin/sh
+# Name: Jay Price
+# Contact: jared.x.price@gmail.com
+# Tue Jun  6 12:48:50 EDT 2017
+# store_entry: Populate the .phone file with new entries..
+#
+#
+PATH=/bin:/usr/bin:/usr/sbin
+export PATH
+NAME="$1"
+ADDRESS="$2"
+EMAIL="$3"
+PNUMBER="$4"
+OUTFILE=$HOME/.phone
+echo "$NAME:$ADDRESS:$EMAIL:$PNUMBER"\
+	>> $OUTFILE
+	
+

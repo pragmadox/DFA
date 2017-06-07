@@ -8,14 +8,25 @@
 
 PATH=/bin:/usr/bin:/usr/sbin
 export PATH
+QUERY="$@"
+INFILE=$HOME/.phone
+RESULTS=`grep "$QUERY" $INFILE`
+while read LINE
+do 
+	ENTRY="$LINE"
+	NAME=`echo $ENTRY | cut -d : -f1`
+	ADDRESS=`echo $ENTRY | cut -d : -f2`
+        EMAIL=`echo $ENTRY | cut -d : -f3`
+        PNUMBER=`echo $ENTRY | cut -d : -f4`
+        echo "NAME:$NAME ADDRESS:$ADDRESS EMAIL:$EMAIL PHONE:$PNUMBER"
+done <<< "$RESULTS"
 
-LINE=`grep $@ $HOME/.phone`
 
-ENTRY=`echo $LINE | cut -d : -f1 -f2 -f3 -f4`
-NAME=`echo $ENTRY | cut -d : -f1`
-ADDRESS=`echo $ENTRY | cut -d : -f2`
-EMAIL=`echo $ENTRY | cut -d : -f3`
-PNUMBER=`echo $ENTRY | cut -d : -f4`
-echo "NAME: $NAME ADDRESS: $ADDRESS EMAIL: $EMAIL PNUMBER: $PNUMBER"
+
+
+
+
+
+
 
 
