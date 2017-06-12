@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh 
 # Name: Jay Price
 # Contact: jared.x.price@gmail.com
 # Tue Jun  6 12:48:50 EDT 2017
@@ -12,6 +12,65 @@ ADDRESS="$2"
 EMAIL="$3"
 PNUMBER="$4"
 OUTFILE=$HOME/.phone
+
+#Check that at least a name was provided.
+while [ "x$NAME" = x ]  
+do
+	echo "You must provide at least a name."
+	echo -n "Name: "
+	read NAME
+	if [ "x$NAME" != x ]
+	then
+		break
+	fi
+done
+
+if [ "x$ADDRESS" = x -a "x$EMAIL" = x  -a "x$PNUMBER" = x ]
+then
+	echo -n "Store only name (y/n)? "
+	read INPUT
+	if [ "$INPUT" = y ]
+	then
+ 		echo "$NAME:$ADDRESS:$EMAIL:$PNUMBER"\
+        	>> $OUTFILE	
+		exit 0
+	fi
+	if [ "$INPUT" = n ]
+	then
+		while [ "x$ADDRESS" = x ]
+		do
+        		echo -n "Address: "
+        		read ADDRESS 
+        		if [ "x$ADDRESS" != x ]
+        		then
+                		break
+			fi
+			if [ "x$ADDRESS" = x ]
+			then
+				echo "Still no input."
+			fi 	
+        	done
+		echo -n "Store only name (y/n)? "
+        	read INPUT
+        	if [ "$INPUT" = y ]
+        	then
+                	echo "$NAME:$ADDRESS:$EMAIL:$PNUMBER"\
+                	>> $OUTFILE
+                	exit 0
+        	fi
+ 
+
+	fi
+		echo -n "Email: "
+		read $EMAIL
+		echo -n "Phone: "
+		read $PNUMBER
+
+
+	
+
+fi 	
+
 echo "$NAME:$ADDRESS:$EMAIL:$PNUMBER"\
 	>> $OUTFILE
 	

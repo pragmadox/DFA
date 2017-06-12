@@ -1,0 +1,33 @@
+Internally defined functions:
+sigchld
+communicate
+
+Externally defined functions:
+signal
+waitpid
+setitimer
+select
+read
+fcntl
+write
+getopt
+switch
+strcopy
+fprintf
+memset
+htonl
+htons
+socket
+bind
+sizeof
+perror
+listen
+exit
+signal
+close
+ioctl
+accept
+inet_ntoa
+fork
+close
+setsockopt
